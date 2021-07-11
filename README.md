@@ -1,2 +1,2 @@
-# shock
+# Shock - Pasted but Powerful
 Coming Soon...
