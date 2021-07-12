@@ -5,7 +5,6 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
-using Shock.Functions;
 using Console = Colorful.Console;
 
 namespace Shock.Modules
@@ -17,7 +16,7 @@ namespace Shock.Modules
         public static void CaptureRemover()
         {
             Console.Title =
-                "                                                                                                 [>] Shock | Combo Editor | vx#1234 [<]";
+                "                                                                                                 [>] Shock | Version 1.2 | vx#1234 [<]";
             System.Console.Clear();
             System.Console.WriteLine();
             Program.Ascii();
@@ -87,7 +86,7 @@ namespace Shock.Modules
         public static void DupeRemover()
         {
             Console.Title =
-                "                                                                                                 [>] Shock | Combo Editor -> DupeRemover | vx#1234 [<]";
+                "                                                                                                 [>] Shock | Version 1.2 | vx#1234 [<]";
             System.Console.Clear();
             System.Console.WriteLine();
             Program.Ascii();
@@ -140,7 +139,7 @@ namespace Shock.Modules
         public static void MailPassEdit()
         {
             Console.Title =
-                "                                                                                                 [>] Shock | CUI Version 1.0 | vx#1234 [<]";
+                "                                                                                                 [>] Shock | Version 1.2 | vx#1234 [<]";
             System.Console.Clear();
             System.Console.WriteLine();
             Program.Ascii();

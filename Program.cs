@@ -76,7 +76,7 @@ namespace Shock
             menu1:
             System.Console.Clear();
             Console.Title =
-                "                                                                                                       [>] Shock | Main Menu | vx#1234 [<]";
+                "                                                                                                       [>] Shock | Version 1.2 | vx#1234 [<]";
             Console.WriteLine("");
             Ascii();
             Console.WriteLine("");
@@ -135,7 +135,7 @@ namespace Shock
         {
             System.Console.Clear();
             Console.Title =
-                "                                                                                                       [>] Shock | Checkers | vx#1234 [<]";
+                "                                                                                                       [>] Shock | Version 1.2 | vx#1234 [<]";
             Console.WriteLine("");
             Ascii();
             Console.WriteLine("");
@@ -184,7 +184,7 @@ namespace Shock
         {
             menu:
             Console.Title =
-                "                                                                                                 [>] Shock | Proxy Scraper | vx#1234 [<]";
+                "                                                                                                 [>] Shock | Version 1.2 | vx#1234 [<]";
             Console.Clear();
             Program.Ascii();
             Console.WriteLine();
@@ -240,7 +240,7 @@ namespace Shock
             sql:
             System.Console.Clear();
             Console.Title =
-                "                                                                                                       [>] Shock | SQLi Toolkit | vx#1234 [<]";
+                "                                                                                                       [>] Shock | Version 1.2 | vx#1234 [<]";
             Console.WriteLine("");
             Ascii();
             Console.WriteLine("");
@@ -294,7 +294,7 @@ namespace Shock
             sniper:
             System.Console.Clear();
             Console.Title =
-                "                                                                                                       [>] Shock | File Sniper | vx#1234 [<]";
+                "                                                                                                       [>] Shock | Version 1.2 | vx#1234 [<]";
             Console.WriteLine("");
             Ascii();
             Console.WriteLine("");
@@ -347,7 +347,7 @@ namespace Shock
         {
             comboeditor:
             Console.Title =
-                "                                                                                                       [>] Shock | Combo Editor | vx#1234 [<]";
+                "                                                                                                       [>] Shock | Version 1.2 | vx#1234 [<]";
             System.Console.Clear();
             System.Console.WriteLine();
             Ascii();

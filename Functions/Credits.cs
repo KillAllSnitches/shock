@@ -10,7 +10,7 @@ namespace Shock.Functions
         {
             System.Console.Clear();
             Console.Title =
-                "                                                                                                       [>] Shock | Credits | vx#1234 [<]";
+                "                                                                                                       [>] Shock | Version 1.2 | vx#1234 [<]";
             Console.WriteLine("");
             Program.Ascii();
             Console.WriteLine("");

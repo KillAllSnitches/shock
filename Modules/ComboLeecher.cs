@@ -26,7 +26,7 @@ namespace Shock.Modules
         public static void Leecher()
         {
             Console.Title =
-                "                                                                                                 [>] Shock | Combo Leecher | vx#1234 [<]";
+                "                                                                                                 [>] Shock | Version 1.2 | vx#1234 [<]";
             Console.Clear();
             Program.Ascii();
             Console.WriteLine();
