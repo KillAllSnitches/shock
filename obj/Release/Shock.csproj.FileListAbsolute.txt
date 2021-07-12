@@ -1,0 +1,2 @@
+C:\Users\zakis\Desktop\src\Shock\obj\Release\Shock.csproj.AssemblyReference.cache
+C:\Users\zakis\Desktop\src\Shock\obj\Release\Shock.csproj.CoreCompileInputs.cache
