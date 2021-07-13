@@ -55,7 +55,8 @@ class NordVPN:
         return account_list
 
     def __get_proxy(self, proxy_type, direct):
-        proxy_list = self.__read(self.data['proxy_dir'], 'r') 
+        proxy_list = self.__read(self.data['proxy_dir'], 'r')
+        use_proxy = True 
         proxies = {'http': '%s://%s' % (self.data['proxy_type'], random.choice(proxy_list))}
         
         return proxies
@@ -73,7 +74,7 @@ class NordVPN:
     def update_title(self):
         while True:
             elapsed = time.strftime('%H:%M:%S', time.gmtime(time.time() - self.start))
-            os.system('title Fast NordVPN Checker - Checked: %s ^| Retries: %s ^| CPM: %s ^| Time Elapsed: %s ^| Threads: %s' % (self.data['checked'], self.data['retries'], self.data['cpm'], elapsed, (threading.active_count() - 2)))
+            os.system('title NordVPN Checker - Checked: %s ^| Retries: %s ^| CPM: %s ^| Time Elapsed: %s ^| Threads: %s' % (self.data['checked'], self.data['retries'], self.data['cpm'], elapsed, (threading.active_count() - 2)))
             time.sleep(0.4)
 
     def title(self):
@@ -98,7 +99,7 @@ class NordVPN:
         self.data['proxy_dir'] = proxy_dir
 
         try:
-            proxy_type = int(input(f'[{Fore.CYAN}?{Style.RESET_ALL}] HTTPS[{Fore.CYAN}0{Style.RESET_ALL}]/SOCKS4[{Fore.CYAN}1{Style.RESET_ALL}]/SOCKS5[{Fore.CYAN}2{Style.RESET_ALL}] > '))
+            proxy_type = int(input(f' HTTPS[{Fore.CYAN}0{Style.RESET_ALL}]\n SOCKS4[{Fore.CYAN}1{Style.RESET_ALL}]\n SOCKS5[{Fore.CYAN}2{Style.RESET_ALL}]\n > '))
         
         except ValueError:
             print(f'[{Fore.CYAN}>{Style.RESET_ALL}] Value error! Please choose 0, 1, or 2!')
@@ -178,7 +179,11 @@ class NordVPN:
 
                 if 'Too Many Requests' in r.text:
                     free_print(f'[!] {Fore.RED}ERROR, TOO MANY REQUESTS. Change your proxies or use a different VPN. {Style.RESET_ALL}')
-
+                    key = input("> ")
+                    if key == 'a':
+                        checker()
+                    else:
+                        checker()
                 self.data['checked'] += 1
             except requests.exceptions.RequestException:
                 self.data['retries'] += 1
@@ -203,7 +208,7 @@ def worker(n, combos, thread_id):
 def main():
     global check
     os.system('cls')
-    os.system('title NordVPN Checker ^| NightfallGT')
+    os.system('title NordVPN Checker ^| Shock V1.4')
     
     n = NordVPN()
     n.title()
@@ -215,7 +220,7 @@ def main():
         print(f'[{Fore.CYAN}>{Style.RESET_ALL}] This message will be added to the text file if it is a hit.')
         custom_message = input(f'[{Fore.CYAN}>{Style.RESET_ALL}] Add: ')
         n.custom_message(custom_message)
-
+    
     use_proxy = input(f'[{Fore.CYAN}>{Style.RESET_ALL}] Use proxy? y/n > ')
 
     if use_proxy == 'y':

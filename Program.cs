@@ -76,18 +76,70 @@ namespace Shock
             menu1:
             System.Console.Clear();
             Console.Title =
-                "                                                                                                       [>] Shock | Version 1.2 | vx#1234 [<]";
+                "                                                                                                       [>] Shock | Version 1.4 | vx#1234 [<]";
             Console.WriteLine("");
             Ascii();
             Console.WriteLine("");
             System.Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("                                Join Shock's Discord - discord.io/shockaio", Color.White);
+            Console.WriteLine("");
+            prefix("1", "Combo Tools\n");
+            prefix("2", "Checkers\n");
+            prefix("3", "SQLi Tools\n");
+            prefix("4", "Other Tools\n");
+            prefix("5", "Credits\n");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            prefix(">", "");
+            var userinput = Console.ReadLine();
+            switch (userinput)
+            {
+                case "1":
+                    {
+                        combotools();
+                        break;
+                    }
+                case "2":
+                    {
+                        checkers();
+                        break;
+                    }
+                case "3":
+                    {
+                        sqltools();
+                        break;
+                    }
+                case "4":
+                    {
+                        misc();
+                        break;
+                    }
+                case "5":
+                    {
+                        credits.creds();
+                        break;
+                    }
+                default:
+                    prefix("Invalid Option", "");
+                    Thread.Sleep(300);
+                    goto menu1;
+                    break;
+            }
+        }
+        public static void combotools()
+        {
+            System.Console.Clear();
+            Console.Title =
+                "                                                                                                       [>] Shock | Version 1.4 | vx#1234 [<]";
+            Console.WriteLine("");
+            Ascii();
+            Console.WriteLine("");
+            System.Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("");
             prefix("1", "Combo Leecher\n");
             prefix("2", "Combo Editor\n");
             prefix("3", "Proxy Scraper\n");
-            prefix("4", "Checkers\n");
-            prefix("5", "SQLi Tools\n");
-            prefix("6", "Credits\n");
+            prefix("X", "Go Back\n");
             Console.WriteLine("");
             Console.WriteLine("");
             prefix(">", "");
@@ -109,33 +161,25 @@ namespace Shock
                         proxyscraper();
                         break;
                     }
-                case "4":
+                case "x":
                     {
-                        checkers();
+                        System.Console.Clear();
+                        Menu0();
                         break;
                     }
-                case "5":
+                case "X":
                     {
-                        sqltools();
+                        System.Console.Clear();
+                        Menu0();
                         break;
                     }
-                case "6":
-                    {
-                        credits.creds();
-                        break;
-                    }
-                default:
-                    prefix("Invalid Option", "");
-                    Thread.Sleep(300);
-                    goto menu1;
-                    break;
             }
         }
         public static void checkers()
         {
             System.Console.Clear();
             Console.Title =
-                "                                                                                                       [>] Shock | Version 1.2 | vx#1234 [<]";
+                "                                                                                                       [>] Shock | Version 1.4 | vx#1234 [<]";
             Console.WriteLine("");
             Ascii();
             Console.WriteLine("");
@@ -143,6 +187,7 @@ namespace Shock
             Console.WriteLine("");
             prefix("1", "NordVPN\n");
             prefix("2", "Hulu\n");
+            prefix("3", "Minecraft (Coming Soon)\n");
             prefix("X", "Go Back\n");
             Console.WriteLine("");
             Console.WriteLine("");
@@ -168,6 +213,14 @@ namespace Shock
                         Menu0();
                         break;
                     }
+                case "3":
+                    {
+                        Console.WriteLine(" ");
+                        prefix("!", "Coming Soon!");
+                        Thread.Sleep(1500);
+                        checkers();
+                        break;
+                    }
                 case "x":
                     {
                         Menu0();
@@ -184,7 +237,7 @@ namespace Shock
         {
             menu:
             Console.Title =
-                "                                                                                                 [>] Shock | Version 1.2 | vx#1234 [<]";
+                "                                                                                                 [>] Shock | Version 1.4 | vx#1234 [<]";
             Console.Clear();
             Program.Ascii();
             Console.WriteLine();
@@ -218,6 +271,49 @@ namespace Shock
                 case "X":
                     {
                         System.Console.Clear();
+                        combotools();
+                        break;
+                    }
+                case "x":
+                    {
+                        System.Console.Clear();
+                        combotools();
+                        break;
+                    }
+                default:
+                    prefix("Invalid Option", "");
+                    Thread.Sleep(300);
+                    goto menu;
+                    break;
+            }
+
+        }
+        public static void misc()
+        {
+            menu:
+            System.Console.Clear();
+            Console.Title =
+                "                                                                                                       [>] Shock | Version 1.4 | vx#1234 [<]";
+            Console.WriteLine("");
+            Ascii();
+            Console.WriteLine("");
+            Console.WriteLine("");
+            prefix("1", "File Sniper\n");
+            prefix("X", "Go Back\n");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            prefix(">", "");
+            var userinput = Console.ReadLine();
+            switch (userinput)
+            {
+                case "1":
+                    {
+                        filesniper0();
+                        break;
+                    }
+                case "X":
+                    {
+                        System.Console.Clear();
                         Menu0();
                         break;
                     }
@@ -233,21 +329,19 @@ namespace Shock
                     goto menu;
                     break;
             }
-
         }
         public static void sqltools()
         {
             sql:
             System.Console.Clear();
             Console.Title =
-                "                                                                                                       [>] Shock | Version 1.2 | vx#1234 [<]";
+                "                                                                                                       [>] Shock | Version 1.4 | vx#1234 [<]";
             Console.WriteLine("");
             Ascii();
             Console.WriteLine("");
             Console.WriteLine("");
             prefix("1", "Vuln Scanner\n");
             prefix("2", "Dork Parser\n");
-            prefix("3", "File Sniper (Coming Soon)\n");
             prefix("X", "Go Back\n");
             Console.WriteLine("");
             Console.WriteLine("");
@@ -263,11 +357,6 @@ namespace Shock
                 case "2":
                     {
                         DorkParser.Parser0();
-                        break;
-                    }
-                case "3":
-                    {
-                        goto sql;
                         break;
                     }
                 case "X":
@@ -294,14 +383,13 @@ namespace Shock
             sniper:
             System.Console.Clear();
             Console.Title =
-                "                                                                                                       [>] Shock | Version 1.2 | vx#1234 [<]";
+                "                                                                                                       [>] Shock | Version 1.4 | vx#1234 [<]";
             Console.WriteLine("");
             Ascii();
             Console.WriteLine("");
             Console.WriteLine("");
             prefix("1", "Anonfile\n");
             prefix("2", "Google Drive\n");
-            prefix("3", "Zippyshare\n");
             prefix("X", "Go Back\n");
             Console.WriteLine("");
             Console.WriteLine("");
@@ -319,21 +407,16 @@ namespace Shock
                         FileSniper.drive();
                         break;
                     }
-                case "3":
-                    {
-                        FileSniper.zippyshare();
-                        break;
-                    }
                 case "X":
                     {
                         System.Console.Clear();
-                        Menu0();
+                        misc();
                         break;
                     }
                 case "x":
                     {
                         System.Console.Clear();
-                        Menu0();
+                        misc();
                         break;
                     }
                 default:
@@ -347,7 +430,7 @@ namespace Shock
         {
             comboeditor:
             Console.Title =
-                "                                                                                                       [>] Shock | Version 1.2 | vx#1234 [<]";
+                "                                                                                                       [>] Shock | Version 1.4 | vx#1234 [<]";
             System.Console.Clear();
             System.Console.WriteLine();
             Ascii();
@@ -385,13 +468,13 @@ namespace Shock
                 case "X":
                     {
                         System.Console.Clear();
-                        Menu0();
+                        combotools();
                         break;
                     }
                 case "x":
                     {
                         System.Console.Clear();
-                        Menu0();
+                        combotools();
                         break;
                     }
                 default:

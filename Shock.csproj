@@ -74,14 +74,19 @@
     <Compile Include="Modules\VulnScanner.cs" />
     <Compile Include="Modules\ComboTool.cs" />
     <Compile Include="Modules\ComboLeecher.cs" />
+    <Content Include="Checkers\oxy.py" />
+    <Content Include="keys.txt" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Checkers\Settings.yml" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Checkers\hulu.py" />
+    <Content Include="Checkers\nordvpn.py" />
     <Content Include="shock.ico" />
   </ItemGroup>
   <ItemGroup />

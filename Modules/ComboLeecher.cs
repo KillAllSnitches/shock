@@ -10,6 +10,7 @@ using Leaf.xNet;
 using System.Threading.Tasks;
 using Shock.Functions;
 using Console = Colorful.Console;
+using Shock;
 
 namespace Shock.Modules
 {
@@ -25,29 +26,63 @@ namespace Shock.Modules
 
         public static void Leecher()
         {
+            Menu:
             Console.Title =
-                "                                                                                                 [>] Shock | Version 1.2 | vx#1234 [<]";
+                "                                                                                                 [>] Shock | Version 1.4 | vx#1234 [<]";
             Console.Clear();
             Program.Ascii();
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
-            Colorful.Console.Write("\n    [", Color.White);
-            Colorful.Console.Write("Select ", Color.White);
-            Colorful.Console.Write("keywords", Color.Cyan);
-            Colorful.Console.Write("]", Color.White);
-            loadKeywords();
-            var num = 0;
-            while (num <= 5)
+            
+            Program.prefix("1", "Default Keywords\n");
+            Program.prefix("2", "Custom Keywords");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Program.prefix(">", "");
+            var userinput = Console.ReadLine();
+            switch (userinput)
             {
-                new Thread(SetGetLinks).Start();
-                num = num + 1;
-            }
+                case "1":
+                    {
+                        loadKeywords2();
+                        var num = 0;
+                        while (num <= 5)
+                        {
+                            new Thread(SetGetLinks).Start();
+                            num = num + 1;
+                        }
+                        break;
+                    }
+                case "2":
+                    {
+                        Colorful.Console.Write("\n    [", Color.White);
+                        Colorful.Console.Write("Select ", Color.White);
+                        Colorful.Console.Write("keywords", Color.Cyan);
+                        Colorful.Console.Write("]", Color.White);
+                        loadKeywords();
+                        var num = 0;
+                        while (num <= 5)
+                        {
+                            new Thread(SetGetLinks).Start();
+                            num = num + 1;
+                        }
+                        break;
+
+                    }
+                default:
+                    Console.Clear();
+                    Program.prefix("Invalid Option", "");
+                    Thread.Sleep(1000);
+                    goto Menu;
+                    break;
+            }   
         }
 
         public static void loadKeywords()
         {
             string fileName = null;
+            string dkeys = "keys.txt"; 
             var t = new Thread(() =>
             {
                 var openFileDialog = new OpenFileDialog();
@@ -61,6 +96,22 @@ namespace Shock.Modules
                     fileName = openFileDialog.FileName;
                 } while (!File.Exists(fileName));
 
+                keywords = new List<string>(File.ReadAllLines(fileName));
+                Colorful.Console.Write("\n    [", Color.White);
+                Colorful.Console.Write("Selected ", Color.White);
+                Colorful.Console.Write(keywords.Count.ToString(), Color.Cyan);
+                Colorful.Console.Write(" Keywords", Color.White);
+                Colorful.Console.Write("]", Color.White);
+            });
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+            t.Join();
+        }
+        public static void loadKeywords2()
+        {
+            string fileName = "default keywords.txt";
+            var t = new Thread(() =>
+            {
                 keywords = new List<string>(File.ReadAllLines(fileName));
                 Colorful.Console.Write("\n    [", Color.White);
                 Colorful.Console.Write("Selected ", Color.White);
@@ -106,6 +157,8 @@ namespace Shock.Modules
             sites.Add("paste.rohitab.com");
             sites.Add("posu.org");
             sites.Add("kpaste.net");
+            sites.Add("imperialb.in");
+            sites.Add("doxbin.org");
 
             engines.Add("https://www.bing.com/search?num=100&q=");
             engines.Add("https://search.yahoo.com/search?q=");
@@ -115,16 +168,9 @@ namespace Shock.Modules
             engines.Add("https://www.ask.com/web?q=");
             engines.Add("https://www.wow.com/search?q=");
             engines.Add("https://search.aol.com/aol/search?q=");
-            engines.Add("https://nova.rambler.ru/search?query=");
             engines.Add("https://startpage.com/search?q=");
             engines.Add("https://gigablast.com/search?n=100&q=");
-            engines.Add("https://search.lycos.com/web/?q=");
-            engines.Add("https://searx.run/?q=");
             engines.Add("https://www.mojeek.com/search?&qm=&t=40&q=");
-            engines.Add("https://www.sogou.com/web?query=");
-            engines.Add("https://swisscows.com/web?query=");
-            engines.Add("https://nova.rambler.ru/search?query=");
-            engines.Add("https://fireball.de/search?q=");
             for (; ; )
                 try
                 {
@@ -194,6 +240,7 @@ namespace Shock.Modules
             Colorful.Console.Write(" | ", Color.LightGreen);
             Colorful.Console.Write("Done Scraping", Color.Cyan);
             Thread.Sleep(1500);
+            Program.Menu0();
         }
 
         public static void GrabLinks(string keyword, string site, string engine)

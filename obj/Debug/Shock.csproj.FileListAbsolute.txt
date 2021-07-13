@@ -39,7 +39,6 @@ C:\Users\zakis\Desktop\src\Shock\obj\Debug\Shock.csproj.CoreCompileInputs.cache
 C:\Users\zakis\Desktop\src\Shock\obj\Debug\Shock.csproj.CopyComplete
 C:\Users\zakis\Desktop\src\Shock\obj\Debug\Shock.exe
 C:\Users\zakis\Desktop\src\Shock\obj\Debug\Shock.pdb
-C:\Users\zakis\Desktop\src\Shock\obj\Debug\Shock.csproj.AssemblyReference.cache
 C:\Users\zakis\Desktop\src\Shock\bin\Debug\Colorful.Console.dll
 C:\Users\zakis\Desktop\src\Shock\bin\Debug\Leaf.xNet.dll
 C:\Users\zakis\Desktop\src\Shock\bin\Debug\Newtonsoft.Json.dll

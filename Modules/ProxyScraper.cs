@@ -71,12 +71,6 @@ namespace Shock.Modules
                 return lWebRequest;
             }
         }
-        public static void prefix(string prefix, string description)
-        {
-            Console.Write("    [", Color.White);
-            Console.Write(prefix, Color.Cyan);
-            Console.Write("] " + description, Color.White);
-        }
     }
 }
       

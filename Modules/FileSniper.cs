@@ -6,22 +6,18 @@ using System.Drawing;
 using System.Text.RegularExpressions;
 using Shock;
 using System.Threading;
+using System;
+using Shock.Functions;
 
 namespace Shock.Modules
 {
 	public class FileSniper
 	{
-		public static void prefix(string prefix, string description)
-		{
-			Console.Write("    [", Color.White);
-			Console.Write(prefix, Color.Cyan);
-			Console.Write("] " + description, Color.White);
-		}
 		public static void anonfile()
         {
 			Console.Clear();
 
-			while (true)
+			try
 			{
 				Console.WriteLine("Enter your keyword(s):");
 				Console.Write(">");
@@ -30,9 +26,15 @@ namespace Shock.Modules
 				List<string> Links = new List<string>();
 				using (WebClient wc = new WebClient())
 				{
-					string s = wc.DownloadString("https://google.com/search?q=site:anonfile.com" + resp);
-					Regex r = new Regex(@"https:\/\/anonfile.com\/\w+\/\w+");
-					foreach (Match m in r.Matches(s))
+					string s = wc.DownloadString("https://google.com/search?q=inurl:anonfile.com+" + resp);
+					Regex r0 = new Regex(@"https:\/\/anonfile.com\/\w+\/\w+");
+					Regex r1 = new Regex(@"https:\/\/anonfiles.com\//w+\/\w+");
+					foreach (Match m in r0.Matches(s))
+					{
+						count++;
+						Links.Add(m.ToString());
+					}
+					foreach (Match m in r1.Matches(s))
 					{
 						count++;
 						Links.Add(m.ToString());
@@ -48,27 +50,33 @@ namespace Shock.Modules
 				}
 
 				Console.WriteLine();
-				Console.WriteLine("Scraped " + count.ToString() + " links!");
-				Thread.Sleep(500);
+				Console.WriteLine("Scraped " + count.ToString() + " links!" + "|" + "Saved Links to:" + AppDomain.CurrentDomain.BaseDirectory + "links.txt");
+				Thread.Sleep(5000);
 				Program.Menu0();
+			}
+            catch
+            {
+				Console.WriteLine("[!] Your IP is blocked, please change vpn servers or try again later...", Color.Red);
+				Thread.Sleep(5000);
+				Program.filesniper0();
 			}
 		}
 		public static void drive()
 		{
 			Console.Clear();
 
-			while (true)
+			try
 			{
-				prefix("+", "Enter a keyword");
+				Program.prefix("+", "Enter a keyword");
 				Console.WriteLine(" ");
-				prefix(">", " ");
+				Program.prefix(">", " ");
 				string resp = Console.ReadLine();
 				int count = 0;
 				List<string> Links = new List<string>();
 				using (WebClient wc = new WebClient())
 				{
-					string s = wc.DownloadString("https://google.com/search?q=site:drive.google.com" + resp);
-					Regex r = new Regex(@"https:\/\/drive.google.com\/\w+\/\w+");
+					string s = wc.DownloadString("https://google.com/search?q=inurl:drive.google.com+" + resp);
+					Regex r = new Regex(@"https:\/\/drive.google.com\/drive\/folders\/\w+");
 					foreach (Match m in r.Matches(s))
 					{
 						count++;
@@ -89,41 +97,11 @@ namespace Shock.Modules
 				Thread.Sleep(500);
 				Program.Menu0();
 			}
-		}
-		public static void zippyshare()
-		{
-			Console.Clear();
-
-			while (true)
-			{
-				Console.WriteLine("Enter your keyword(s):");
-				Console.Write(">");
-				string resp = Console.ReadLine();
-				int count = 0;
-				List<string> Links = new List<string>();
-				using (WebClient wc = new WebClient())
-				{
-					string s = wc.DownloadString("https://google.com/search?q=site:zippyshare.com" + resp);
-					Regex r = new Regex(@"https:\/\/zippyshare.com\/\w+\/\w+");
-					foreach (Match m in r.Matches(s))
-					{
-						count++;
-						Links.Add(m.ToString());
-					}
-				}
-
-				using (TextWriter tw = new StreamWriter(@"links.txt"))
-				{
-					foreach (string line in Links)
-					{
-						tw.WriteLine(line.ToString());
-					}
-				}
-
-				Console.WriteLine();
-				Console.WriteLine("Scraped " + count.ToString() + " links!");
-				Thread.Sleep(500);
-				Program.Menu0();
+            catch
+            {
+				Console.WriteLine("[!] Your IP is blocked, please change vpn servers or try again later...", Color.Red);
+				Thread.Sleep(5000);
+				Program.filesniper0();
 			}
 		}
 	}

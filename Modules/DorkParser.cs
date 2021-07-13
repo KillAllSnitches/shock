@@ -98,13 +98,13 @@ namespace Shock.Modules
             if (ParserRunning == true)
             {
                 Console.Title =
-                    "                                                                                       [>] Shock | Version 1.2 | vx#1234 [<]";
+                    "                                                                                       [>] Shock | Version 1.4 | vx#1234 [<]";
                 Task.Factory.StartNew(delegate { printt(); });
                 return;
             }
             Export.InitializeBlacklist();
             Console.Title =
-                "                                                                                       [>] Shock | Version 1.2 | vx#1234 [<]";
+                "                                                                                       [>] Shock | Version 1.4 | vx#1234 [<]";
             Console.Clear();
             Console.WriteLine();
             Program.Ascii();
@@ -267,7 +267,7 @@ namespace Shock.Modules
 
         public static void StartBingParser()
         {
-            Console.Title = "                                                                                                 [>] Shock | Version 1.2 | vx#1234 [<]";
+            Console.Title = "                                                                                                 [>] Shock | Version 1.4 | vx#1234 [<]";
 
             for (; ; )
                 try
@@ -368,7 +368,7 @@ namespace Shock.Modules
 
         public static void StartAOLParser()
         {
-            Console.Title = "                                                                                                 [>] Shock | Version 1.2 | vx#1234 [<]";
+            Console.Title = "                                                                                                 [>] Shock | Version 1.4 | vx#1234 [<]";
             for (; ; )
             {
                 if (Program.Proxyindex > Program.Proxies.Count() - 2) Program.Proxyindex = 0;
@@ -483,7 +483,7 @@ namespace Shock.Modules
 
         public static void StartAskParser()
         {
-            Console.Title = "                                                                                                 [>] Shock | Version 1.2 | vx#1234 [<]";
+            Console.Title = "                                                                                                 [>] Shock | Version 1.4 | vx#1234 [<]";
             for (; ; )
             {
                 if (Program.Proxyindex > Program.Proxies.Count() - 2) Program.Proxyindex = 0;
@@ -591,7 +591,7 @@ namespace Shock.Modules
 
         public static void StartMailRuParser()
         {
-            Console.Title = "                                                                                                 [>] Shock | Version 1.2 | vx#1234 [<]";
+            Console.Title = "                                                                                                 [>] Shock | Version 1.4 | vx#1234 [<]";
             for (; ; )
             {
                 if (Program.Proxyindex > Program.Proxies.Count() - 2) Program.Proxyindex = 0;
@@ -697,7 +697,7 @@ namespace Shock.Modules
 
         public static void StartMyWebSearchParser()
         {
-            Console.Title = "                                                                                                 [>] Shock | Version 1.2 | vx#1234 [<]";
+            Console.Title = "                                                                                                 [>] Shock | Version 1.4 | vx#1234 [<]";
             for (; ; )
             {
                 if (Program.Proxyindex > Program.Proxies.Count() - 2) Program.Proxyindex = 0;
@@ -801,7 +801,7 @@ namespace Shock.Modules
 
         public static void StartOrangeParser()
         {
-            Console.Title = "                                                                                                 [>] Shock | Version 1.2 | vx#1234 [<]";
+            Console.Title = "                                                                                                 [>] Shock | Version 1.4 | vx#1234 [<]";
             for (; ; )
             {
                 if (Program.Proxyindex > Program.Proxies.Count() - 2) Program.Proxyindex = 0;

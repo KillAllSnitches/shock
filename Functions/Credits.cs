@@ -10,19 +10,20 @@ namespace Shock.Functions
         {
             System.Console.Clear();
             Console.Title =
-                "                                                                                                       [>] Shock | Version 1.2 | vx#1234 [<]";
+                "                                                                                                       [>] Shock | Version 1.4 | vx#1234 [<]";
             Console.WriteLine("");
             Program.Ascii();
             Console.WriteLine("");
-            prefix("+", "KyeOnDiscord - For making a proxy scraper that was very easy to expand on\n");
-            prefix("+", "0cw - For developing BoltAIO which is the main base for this program  \n");
-            prefix("+", "Her - Getting banned from c.to which allowed their c.to auth to get cracked lol (Hulu Checker)\n");
-            prefix("+", "NightfallGT - For developing a insanely overpowered nordvpn checker\n");
-            prefix("+", "JayJay#0124 - For helping me debug\n");
-            prefix("+", "! 0xluxiferr#0001 - For helping me learn how to call python scripts inside a C# application\n");
+            Program.prefix("+", "KyeOnDiscord - Proxy Scraper\n");
+            Program.prefix("+", "0cw - Shock's Base (BoltAIO V2)\n");
+            Program.prefix("+", "Her - Hulu Checker\n");
+            Program.prefix("+", "NightfallGT - NordVPN Checker\n");
+            Program.prefix("+", "luxiferr - Calling python scripts inside C#\n");
+            Program.prefix("+", "xshonda - ShockAIO's Showcase Video\n");
+
             Console.WriteLine(" ");
             Console.WriteLine(" ");
-            prefix(">", " ");
+            Program.prefix(">", " ");
             var userinput = Console.ReadLine();
             switch (userinput)
             {
@@ -30,12 +31,6 @@ namespace Shock.Functions
                     Program.Menu0();
                     break;
             }
-        }
-        public static void prefix(string prefix, string description)
-        {
-            Console.Write("    [", Color.White);
-            Console.Write(prefix, Color.Cyan);
-            Console.Write("] " + description, Color.White);
         }
     }
 }

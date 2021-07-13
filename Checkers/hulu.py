@@ -1,4 +1,10 @@
-import requests, time, os, ctypes, threading, win32com.client, colorama
+import requests
+import time
+import os
+import ctypes
+import threading
+import win32com.client
+import colorama
 from colorama import init, Fore, Style, Back
 init(convert=True)
 op1 = 1

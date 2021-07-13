@@ -16,7 +16,7 @@ namespace Shock.Modules
         public static void CaptureRemover()
         {
             Console.Title =
-                "                                                                                                 [>] Shock | Version 1.2 | vx#1234 [<]";
+                "                                                                                                 [>] Shock | Version 1.4 | vx#1234 [<]";
             System.Console.Clear();
             System.Console.WriteLine();
             Program.Ascii();
@@ -86,7 +86,7 @@ namespace Shock.Modules
         public static void DupeRemover()
         {
             Console.Title =
-                "                                                                                                 [>] Shock | Version 1.2 | vx#1234 [<]";
+                "                                                                                                 [>] Shock | Version 1.4 | vx#1234 [<]";
             System.Console.Clear();
             System.Console.WriteLine();
             Program.Ascii();
@@ -139,7 +139,7 @@ namespace Shock.Modules
         public static void MailPassEdit()
         {
             Console.Title =
-                "                                                                                                 [>] Shock | Version 1.2 | vx#1234 [<]";
+                "                                                                                                 [>] Shock | Version 1.4 | vx#1234 [<]";
             System.Console.Clear();
             System.Console.WriteLine();
             Program.Ascii();
