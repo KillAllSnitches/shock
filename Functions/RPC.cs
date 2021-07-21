@@ -13,7 +13,7 @@ namespace Shock.Functions
             client.SetPresence(new RichPresence
             {
                 Details = "discord.io/shockaio",
-                State = "Version 1.7",
+                State = "Version 1.8",
                 Timestamps = Timestamps.Now,
                 Assets = new Assets
                 {

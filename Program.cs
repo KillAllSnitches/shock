@@ -81,7 +81,7 @@ namespace Shock
             Export.Initialize();
             menu1:
             Console.Title =
-                "                                                                                                       [>] Shock | Version 1.7 | vx#1234 [<]";
+                "                                                                                                       [>] Shock | Version 1.8 | vx#1234 [<]";
             Ascii();
             System.Console.ForegroundColor = ConsoleColor.Cyan;
             prefix("1", "Combo Tools\n");
@@ -131,7 +131,7 @@ namespace Shock
         {
             System.Console.Clear();
             Console.Title =
-                "                                                                                                       [>] Shock | Version 1.7 | vx#1234 [<]";
+                "                                                                                                       [>] Shock | Version 1.8 | vx#1234 [<]";
             Console.WriteLine("");
             Ascii();
             Console.WriteLine("");
@@ -180,7 +180,7 @@ namespace Shock
         {
             System.Console.Clear();
             Console.Title =
-                "                                                                                                       [>] Shock | Version 1.7 | vx#1234 [<]";
+                "                                                                                                       [>] Shock | Version 1.8 | vx#1234 [<]";
             Console.WriteLine("");
             Ascii();
             Console.WriteLine("");
@@ -237,7 +237,7 @@ namespace Shock
         {
             menu:
             Console.Title =
-                "                                                                                                 [>] Shock | Version 1.7 | vx#1234 [<]";
+                "                                                                                                 [>] Shock | Version 1.8 | vx#1234 [<]";
             Console.Clear();
             Program.Ascii();
             Console.WriteLine();
@@ -293,7 +293,7 @@ namespace Shock
             menu:
             System.Console.Clear();
             Console.Title =
-                "                                                                                                       [>] Shock | Version 1.7 | vx#1234 [<]";
+                "                                                                                                       [>] Shock | Version 1.8 | vx#1234 [<]";
             Console.WriteLine("");
             Ascii();
             Console.WriteLine("");
@@ -335,7 +335,7 @@ namespace Shock
             sql:
             System.Console.Clear();
             Console.Title =
-                "                                                                                                       [>] Shock | Version 1.7 | vx#1234 [<]";
+                "                                                                                                       [>] Shock | Version 1.8 | vx#1234 [<]";
             Console.WriteLine("");
             Ascii();
             Console.WriteLine("");
@@ -382,7 +382,7 @@ namespace Shock
         {
             sniper:
             Console.Title =
-                "                                                                                                       [>] Shock | Version 1.7 | vx#1234 [<]";
+                "                                                                                                       [>] Shock | Version 1.8 | vx#1234 [<]";
             Ascii();
             prefix("1", "Bing\n");
             prefix("2", "Google\n");
@@ -444,7 +444,7 @@ namespace Shock
         {
             comboeditor:
             Console.Title =
-                "                                                                                                       [>] Shock | Version 1.7 | vx#1234 [<]";
+                "                                                                                                       [>] Shock | Version 1.8 | vx#1234 [<]";
             System.Console.Clear();
             System.Console.WriteLine();
             Ascii();

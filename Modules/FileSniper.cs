@@ -341,7 +341,7 @@ namespace Shock.Modules
 						Console.Write("Keyword: ");
 						string resp = Console.ReadLine();
 						{
-							Process.Start("https://search.aol.com/aol/search?q=site:anonfile.com+" + resp);
+							Process.Start("https://search.yahoo.com/search?q=site:anonfile.com+" + resp);
 							Program.filesniper0();
 						}
 						break;
@@ -352,7 +352,7 @@ namespace Shock.Modules
 						Console.Write("Keyword: ");
 						string resp = Console.ReadLine();
 						{
-							Process.Start("https://search.aol.com/aol/search?q=site:drive.google.com+" + resp);
+							Process.Start("https://search.yahoo.com/search?q=site:drive.google.com+" + resp);
 							Program.filesniper0();
 						}
 						break;
