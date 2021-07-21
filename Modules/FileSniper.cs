@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Console = Colorful.Console;
+﻿using Console = Colorful.Console;
 using System.IO;
 using System.Net;
 using System.Drawing;
@@ -7,101 +6,396 @@ using System.Text.RegularExpressions;
 using Shock;
 using System.Threading;
 using System;
+using System.Diagnostics;
 using Shock.Functions;
 
 namespace Shock.Modules
 {
 	public class FileSniper
 	{
-		public static void anonfile()
-        {
-			Console.Clear();
-
-			try
+		public static void google()
+		{
+		start:
+			Program.Ascii();
+			Program.prefix("1", "Anonfile\n");
+			Program.prefix("2", "Google Drive\n");
+			Program.prefix("3", "ZippyShare\n");
+			Program.prefix("4", "Mediafire\n");
+			Program.prefix("5", "Mega\n");
+			//Program.prefix("6", "FileIO");
+			//Program.prefix("7", "Sendspace");
+			var userinput = Console.ReadLine();
+			switch (userinput)
 			{
-				Console.WriteLine("Enter your keyword(s):");
-				Console.Write(">");
-				string resp = Console.ReadLine();
-				int count = 0;
-				List<string> Links = new List<string>();
-				using (WebClient wc = new WebClient())
-				{
-					string s = wc.DownloadString("https://google.com/search?q=inurl:anonfile.com+" + resp);
-					Regex r0 = new Regex(@"https:\/\/anonfile.com\/\w+\/\w+");
-					Regex r1 = new Regex(@"https:\/\/anonfiles.com\//w+\/\w+");
-					foreach (Match m in r0.Matches(s))
+				case "1":
 					{
-						count++;
-						Links.Add(m.ToString());
+						Program.Ascii();
+						Console.Write("Keyword: ");
+						string resp = Console.ReadLine();
+						{
+							Process.Start("https://google.com/search?q=site:anonfile.com+" + resp);
+							Program.filesniper0();
+						}
+						break;
 					}
-					foreach (Match m in r1.Matches(s))
+				case "2":
 					{
-						count++;
-						Links.Add(m.ToString());
+						Program.Ascii();
+						Console.Write("Keyword: ");
+						string resp = Console.ReadLine();
+						{
+							Process.Start("https://google.com/search?q=site:drive.google.com+" + resp);
+							Program.filesniper0();
+						}
+						break;
 					}
-				}
+				case "3":
+					{
+						Program.Ascii();
+						Console.Write("Keyword: ");
+						string resp = Console.ReadLine();
+						{
+							Process.Start("https://google.com/search?q=site:zippyshare.com+" + resp);
+							Program.filesniper0();
+						}
+						break;
+					}
+				case "4":
+					{
+						Program.Ascii();
+						Console.Write("Keyword: ");
+						string resp = Console.ReadLine();
+						{
+							Process.Start("https://google.com/search?q=site:mediafire.com+" + resp);
+							Program.filesniper0();
+						}
+						break;
+					}
+				case "5":
+					{
+						Program.Ascii();
+						Console.Write("Keyword: ");
+						string resp = Console.ReadLine();
+						{
+							Process.Start("https://google.com/search?q=site:mega.nz+" + resp);
+							Program.filesniper0();
+						}
+						break;
+					}
+				default:
+					Program.prefix("!", "Error");
+					Thread.Sleep(50);
+					goto start;
+					break;
 
-				using (TextWriter tw = new StreamWriter(@"links.txt"))
-				{
-					foreach (string line in Links)
-					{
-						tw.WriteLine(line.ToString());
-					}
-				}
-
-				Console.WriteLine();
-				Console.WriteLine("Scraped " + count.ToString() + " links!" + "|" + "Saved Links to:" + AppDomain.CurrentDomain.BaseDirectory + "links.txt");
-				Thread.Sleep(5000);
-				Program.Menu0();
-			}
-            catch
-            {
-				Console.WriteLine("[!] Your IP is blocked, please change vpn servers or try again later...", Color.Red);
-				Thread.Sleep(5000);
-				Program.filesniper0();
 			}
 		}
-		public static void drive()
+		public static void duckduckgo()
 		{
-			Console.Clear();
-
-			try
+		start:
+			Program.Ascii();
+			Program.prefix("1", "Anonfile\n");
+			Program.prefix("2", "Google Drive\n");
+			Program.prefix("3", "ZippyShare\n");
+			Program.prefix("4", "Mediafire\n");
+			Program.prefix("5", "Mega\n");
+			//Program.prefix("6", "FileIO");
+			//Program.prefix("7", "Sendspace");
+			var userinput = Console.ReadLine();
+			switch (userinput)
 			{
-				Program.prefix("+", "Enter a keyword");
-				Console.WriteLine(" ");
-				Program.prefix(">", " ");
-				string resp = Console.ReadLine();
-				int count = 0;
-				List<string> Links = new List<string>();
-				using (WebClient wc = new WebClient())
-				{
-					string s = wc.DownloadString("https://google.com/search?q=inurl:drive.google.com+" + resp);
-					Regex r = new Regex(@"https:\/\/drive.google.com\/drive\/folders\/\w+");
-					foreach (Match m in r.Matches(s))
+				case "1":
 					{
-						count++;
-						Links.Add(m.ToString());
+						Program.Ascii();
+						Console.Write("Keyword: ");
+						string resp = Console.ReadLine();
+						{
+							Process.Start("https://duckduckgo.com/?q=site:anonfile.com+" + resp);
+							Program.filesniper0();
+						}
+						break;
 					}
-				}
-
-				using (TextWriter tw = new StreamWriter(@"links.txt"))
-				{
-					foreach (string line in Links)
+				case "2":
 					{
-						tw.WriteLine(line.ToString());
+						Program.Ascii();
+						Console.Write("Keyword: ");
+						string resp = Console.ReadLine();
+						{
+							Process.Start("https://duckduckgo.com/?q=site:drive.google.com+" + resp);
+							Program.filesniper0();
+						}
+						break;
 					}
-				}
+				case "3":
+					{
+						Program.Ascii();
+						Console.Write("Keyword: ");
+						string resp = Console.ReadLine();
+						{
+							Process.Start("https://duckduckgo.com/?q=site:zippyshare.com+" + resp);
+							Program.filesniper0();
+						}
+						break;
+					}
+				case "4":
+					{
+						Program.Ascii();
+						Console.Write("Keyword: ");
+						string resp = Console.ReadLine();
+						{
+							Process.Start("https://duckduckgo.com/?q=site:mediafire.com+" + resp);
+							Program.filesniper0();
+						}
+						break;
+					}
+				case "5":
+					{
+						Program.Ascii();
+						Console.Write("Keyword: ");
+						string resp = Console.ReadLine();
+						{
+							Process.Start("https://duckduckgo.com/?q=site:mega.nz+" + resp);
+							Program.filesniper0();
+						}
+						break;
+					}
+				default:
+					Program.prefix("!", "Error");
+					Thread.Sleep(50);
+					goto start;
+					break;
 
-				Console.WriteLine();
-				Console.WriteLine("Scraped " + count.ToString() + " links!");
-				Thread.Sleep(500);
-				Program.Menu0();
 			}
-            catch
-            {
-				Console.WriteLine("[!] Your IP is blocked, please change vpn servers or try again later...", Color.Red);
-				Thread.Sleep(5000);
-				Program.filesniper0();
+		}
+		public static void bing()
+		{
+			start:
+			Program.Ascii();
+			Program.prefix("1", "Anonfile\n");
+			Program.prefix("2", "Google Drive\n");
+			Program.prefix("3", "ZippyShare\n");
+			Program.prefix("4", "Mediafire\n");
+			Program.prefix("5", "Mega\n");
+			//Program.prefix("6", "FileIO");
+			//Program.prefix("7", "Sendspace");
+			var userinput = Console.ReadLine();
+			switch (userinput)
+			{
+				case "1":
+					{
+						Program.Ascii();
+						Console.Write("Keyword: ");
+						string resp = Console.ReadLine();
+						{
+							Process.Start("https://bing.com/search?q=site:anonfile.com+" + resp);
+							Program.filesniper0();
+						}
+						break;
+					}
+				case "2":
+					{
+						Program.Ascii();
+						Console.Write("Keyword: ");
+						string resp = Console.ReadLine();
+                        {
+							Process.Start("https://bing.com/search?q=site:drive.google.com+" + resp);
+							Program.filesniper0();
+						}
+						break;
+					}
+				case "3":
+					{
+						Program.Ascii();
+						Console.Write("Keyword: ");
+						string resp = Console.ReadLine();
+                        {
+							Process.Start("https://bing.com/search?q=site:zippyshare.com+" + resp);
+							Program.filesniper0();
+						}
+						break;
+					}
+				case "4":
+					{
+						Program.Ascii();
+						Console.Write("Keyword: ");
+						string resp = Console.ReadLine();
+						{
+							Process.Start("https://bing.com/search?q=site:mediafire.com+" + resp);
+							Program.filesniper0();
+						}
+						break;
+					}
+				case "5":
+					{
+						Program.Ascii();
+						Console.Write("Keyword: ");
+						string resp = Console.ReadLine();
+						{
+							Process.Start("https://bing.com/search?q=site:mega.nz+" + resp);
+							Program.filesniper0();
+						}
+						break;
+					}
+				default:
+					Program.prefix("!", "Error");
+					Thread.Sleep(50);
+					goto start;
+					break;
+
+			}
+		}
+		public static void aol()
+		{
+		start:
+			Program.Ascii();
+			Program.prefix("1", "Anonfile\n");
+			Program.prefix("2", "Google Drive\n");
+			Program.prefix("3", "ZippyShare\n");
+			Program.prefix("4", "Mediafire\n");
+			Program.prefix("5", "Mega\n");
+			//Program.prefix("6", "FileIO");
+			//Program.prefix("7", "Sendspace");
+			var userinput = Console.ReadLine();
+			switch (userinput)
+			{
+				case "1":
+					{
+						Program.Ascii();
+						Console.Write("Keyword: ");
+						string resp = Console.ReadLine();
+						{
+							Process.Start("https://search.aol.com/aol/search?q=site:anonfile.com+" + resp);
+							Program.filesniper0();
+						}
+						break;
+					}
+				case "2":
+					{
+						Program.Ascii();
+						Console.Write("Keyword: ");
+						string resp = Console.ReadLine();
+						{
+							Process.Start("https://search.aol.com/aol/search?q=site:drive.google.com+" + resp);
+							Program.filesniper0();
+						}
+						break;
+					}
+				case "3":
+					{
+						Program.Ascii();
+						Console.Write("Keyword: ");
+						string resp = Console.ReadLine();
+						{
+							Process.Start("https://search.aol.com/aol/search?q=site:zippyshare.com+" + resp);
+							Program.filesniper0();
+						}
+						break;
+					}
+				case "4":
+					{
+						Program.Ascii();
+						Console.Write("Keyword: ");
+						string resp = Console.ReadLine();
+						{
+							Process.Start("https://search.aol.com/aol/search?q=site:mediafire.com+" + resp);
+							Program.filesniper0();
+						}
+						break;
+					}
+				case "5":
+					{
+						Program.Ascii();
+						Console.Write("Keyword: ");
+						string resp = Console.ReadLine();
+						{
+							Process.Start("https://search.aol.com/aol/search?q=site:mega.nz+" + resp);
+							Program.filesniper0();
+						}
+						break;
+					}
+				default:
+					Program.prefix("!", "Error");
+					Thread.Sleep(50);
+					goto start;
+					break;
+
+			}
+		}
+		public static void yahoo()
+		{
+		start:
+			Program.Ascii();
+			Program.prefix("1", "Anonfile\n");
+			Program.prefix("2", "Google Drive\n");
+			Program.prefix("3", "ZippyShare\n");
+			Program.prefix("4", "Mediafire\n");
+			Program.prefix("5", "Mega\n");
+			//Program.prefix("6", "FileIO");
+			//Program.prefix("7", "Sendspace");
+			var userinput = Console.ReadLine();
+			switch (userinput)
+			{
+				case "1":
+					{
+						Program.Ascii();
+						Console.Write("Keyword: ");
+						string resp = Console.ReadLine();
+						{
+							Process.Start("https://search.aol.com/aol/search?q=site:anonfile.com+" + resp);
+							Program.filesniper0();
+						}
+						break;
+					}
+				case "2":
+					{
+						Program.Ascii();
+						Console.Write("Keyword: ");
+						string resp = Console.ReadLine();
+						{
+							Process.Start("https://search.aol.com/aol/search?q=site:drive.google.com+" + resp);
+							Program.filesniper0();
+						}
+						break;
+					}
+				case "3":
+					{
+						Program.Ascii();
+						Console.Write("Keyword: ");
+						string resp = Console.ReadLine();
+						{
+							Process.Start("https://search.yahoo.com/search?q=site:zippyshare.com+" + resp);
+							Program.filesniper0();
+						}
+						break;
+					}
+				case "4":
+					{
+						Program.Ascii();
+						Console.Write("Keyword: ");
+						string resp = Console.ReadLine();
+						{
+							Process.Start("https://search.yahoo.com/search?q=site:mediafire.com+" + resp);
+							Program.filesniper0();
+						}
+						break;
+					}
+				case "5":
+					{
+						Program.Ascii();
+						Console.Write("Keyword: ");
+						string resp = Console.ReadLine();
+						{
+							Process.Start("https://search.yahoo.com/search?q=site:mega.nz+" + resp);
+							Program.filesniper0();
+						}
+						break;
+					}
+				default:
+					Program.prefix("!", "Error");
+					Thread.Sleep(50);
+					goto start;
+					break;
+
 			}
 		}
 	}

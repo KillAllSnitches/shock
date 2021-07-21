@@ -61,7 +61,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Checkers\Minecraft.cs" />
     <Compile Include="Functions\CheckerTools.cs" />
     <Compile Include="Functions\Credits.cs" />
     <Compile Include="Functions\Variables.cs" />
@@ -74,7 +73,6 @@
     <Compile Include="Modules\VulnScanner.cs" />
     <Compile Include="Modules\ComboTool.cs" />
     <Compile Include="Modules\ComboLeecher.cs" />
-    <Content Include="Checkers\oxy.py" />
     <Content Include="keys.txt" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

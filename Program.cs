@@ -54,6 +54,9 @@ namespace Shock
 
         public static void Ascii()
         {
+            System.Console.Clear();
+            Console.Clear();
+            Console.WriteLine("");
             Console.WriteLine("                                 ▄▀▀▀▀▄  ▄▀▀▄ ▄▄   ▄▀▀▀▀▄   ▄▀▄▄▄▄   ▄▀▀▄ █ ",
                 Color.Cyan);
             Console.WriteLine("                                █ █   ▐ █  █   ▄▀ █      █ █ █    ▌ █  █ ▄▀ ",
@@ -68,21 +71,19 @@ namespace Shock
                 Color.Cyan);
             Console.WriteLine("                                          ▐   ▐             ▐        ▐       ",
                 Color.Cyan);
+            Console.WriteLine("");
+            Console.WriteLine("                                Join Shock's Discord - discord.io/shockaio", Color.White);
+            Console.WriteLine("");
         }
         public static void Menu0()
         {
             DiscordRPC1.Initialize();
             Export.Initialize();
             menu1:
-            System.Console.Clear();
             Console.Title =
-                "                                                                                                       [>] Shock | Version 1.4 | vx#1234 [<]";
-            Console.WriteLine("");
+                "                                                                                                       [>] Shock | Version 1.7 | vx#1234 [<]";
             Ascii();
-            Console.WriteLine("");
             System.Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("                                Join Shock's Discord - discord.io/shockaio", Color.White);
-            Console.WriteLine("");
             prefix("1", "Combo Tools\n");
             prefix("2", "Checkers\n");
             prefix("3", "SQLi Tools\n");
@@ -130,7 +131,7 @@ namespace Shock
         {
             System.Console.Clear();
             Console.Title =
-                "                                                                                                       [>] Shock | Version 1.4 | vx#1234 [<]";
+                "                                                                                                       [>] Shock | Version 1.7 | vx#1234 [<]";
             Console.WriteLine("");
             Ascii();
             Console.WriteLine("");
@@ -179,7 +180,7 @@ namespace Shock
         {
             System.Console.Clear();
             Console.Title =
-                "                                                                                                       [>] Shock | Version 1.4 | vx#1234 [<]";
+                "                                                                                                       [>] Shock | Version 1.7 | vx#1234 [<]";
             Console.WriteLine("");
             Ascii();
             Console.WriteLine("");
@@ -187,7 +188,6 @@ namespace Shock
             Console.WriteLine("");
             prefix("1", "NordVPN\n");
             prefix("2", "Hulu\n");
-            prefix("3", "Minecraft (Coming Soon)\n");
             prefix("X", "Go Back\n");
             Console.WriteLine("");
             Console.WriteLine("");
@@ -197,7 +197,7 @@ namespace Shock
             {
                 case "1":
                     {
-                        Process.Start(AppDomain.CurrentDomain.BaseDirectory + "Checkers/nordvpn/nordvpn.exe");
+                        Process.Start(AppDomain.CurrentDomain.BaseDirectory + "Modules/nordvpn.exe");
                         Console.WriteLine("");
                         prefix("+", "Started NordVPN Checker!");
                         Thread.Sleep(1000);
@@ -206,7 +206,7 @@ namespace Shock
                     }
                 case "2":
                     {
-                        Process.Start(AppDomain.CurrentDomain.BaseDirectory + "Checkers/hulu/hulu.exe");
+                        Process.Start(AppDomain.CurrentDomain.BaseDirectory + "Modules/hulu.exe");
                         Console.WriteLine("");
                         prefix("+", "Started Hulu Checker!");
                         Thread.Sleep(1000);
@@ -237,7 +237,7 @@ namespace Shock
         {
             menu:
             Console.Title =
-                "                                                                                                 [>] Shock | Version 1.4 | vx#1234 [<]";
+                "                                                                                                 [>] Shock | Version 1.7 | vx#1234 [<]";
             Console.Clear();
             Program.Ascii();
             Console.WriteLine();
@@ -293,7 +293,7 @@ namespace Shock
             menu:
             System.Console.Clear();
             Console.Title =
-                "                                                                                                       [>] Shock | Version 1.4 | vx#1234 [<]";
+                "                                                                                                       [>] Shock | Version 1.7 | vx#1234 [<]";
             Console.WriteLine("");
             Ascii();
             Console.WriteLine("");
@@ -335,7 +335,7 @@ namespace Shock
             sql:
             System.Console.Clear();
             Console.Title =
-                "                                                                                                       [>] Shock | Version 1.4 | vx#1234 [<]";
+                "                                                                                                       [>] Shock | Version 1.7 | vx#1234 [<]";
             Console.WriteLine("");
             Ascii();
             Console.WriteLine("");
@@ -381,30 +381,44 @@ namespace Shock
         public static void filesniper0()
         {
             sniper:
-            System.Console.Clear();
             Console.Title =
-                "                                                                                                       [>] Shock | Version 1.4 | vx#1234 [<]";
-            Console.WriteLine("");
+                "                                                                                                       [>] Shock | Version 1.7 | vx#1234 [<]";
             Ascii();
-            Console.WriteLine("");
-            Console.WriteLine("");
-            prefix("1", "Anonfile\n");
-            prefix("2", "Google Drive\n");
+            prefix("1", "Bing\n");
+            prefix("2", "Google\n");
+            prefix("3", "DuckDuckGo\n");
+            prefix("4", "AOL\n");
+            prefix("5", "Yahoo\n");
             prefix("X", "Go Back\n");
             Console.WriteLine("");
             Console.WriteLine("");
-            prefix(">", "");
+            prefix("Engine", "");
             var userinput = Console.ReadLine();
             switch (userinput)
             {
                 case "1":
                     {
-                        FileSniper.anonfile();
+                        FileSniper.bing();
                         break;
                     }
                 case "2":
                     {
-                        FileSniper.drive();
+                        FileSniper.google();
+                        break;
+                    }
+                case "3":
+                    {
+                        FileSniper.duckduckgo();
+                        break;
+                    }
+                case "4":
+                    {
+                        FileSniper.aol();
+                        break;
+                    }
+                case "5":
+                    {
+                        FileSniper.yahoo();
                         break;
                     }
                 case "X":
@@ -430,7 +444,7 @@ namespace Shock
         {
             comboeditor:
             Console.Title =
-                "                                                                                                       [>] Shock | Version 1.4 | vx#1234 [<]";
+                "                                                                                                       [>] Shock | Version 1.7 | vx#1234 [<]";
             System.Console.Clear();
             System.Console.WriteLine();
             Ascii();

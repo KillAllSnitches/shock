@@ -44,3 +44,4 @@ C:\Users\zakis\Desktop\src\Shock\bin\Debug\Leaf.xNet.dll
 C:\Users\zakis\Desktop\src\Shock\bin\Debug\Newtonsoft.Json.dll
 C:\Users\zakis\Desktop\src\Shock\bin\Debug\Leaf.xNet.xml
 C:\Users\zakis\Desktop\src\Shock\bin\Debug\Newtonsoft.Json.xml
+C:\Users\zakis\Desktop\src\Shock\obj\Debug\Shock.csproj.AssemblyReference.cache

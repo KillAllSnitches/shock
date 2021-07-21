@@ -10,16 +10,16 @@ namespace Shock.Functions
         {
             System.Console.Clear();
             Console.Title =
-                "                                                                                                       [>] Shock | Version 1.4 | vx#1234 [<]";
+                "                                                                                                       [>] Shock | Version 1.7 | vx#1234 [<]";
             Console.WriteLine("");
             Program.Ascii();
             Console.WriteLine("");
-            Program.prefix("+", "KyeOnDiscord - Proxy Scraper\n");
-            Program.prefix("+", "0cw - Shock's Base (BoltAIO V2)\n");
-            Program.prefix("+", "Her - Hulu Checker\n");
-            Program.prefix("+", "NightfallGT - NordVPN Checker\n");
-            Program.prefix("+", "luxiferr - Calling python scripts inside C#\n");
-            Program.prefix("+", "xshonda - ShockAIO's Showcase Video\n");
+            Program.prefix("+", "github.com/KyeOnDiscord - Proxy Scraper\n");
+            Program.prefix("+", "Quanotics#8507 - Shock's Base (BoltAIO V2)\n");
+            Program.prefix("+", "c.to/Her - Hulu Checker\n");
+            Program.prefix("+", "github.com/NightfallGT - NordVPN Checker\n");
+            Program.prefix("+", "! 0xluxiferr#0132 - Calling python scripts inside C#\n");
+            Program.prefix("+", "xshonda#9999 - ShockAIO's Showcase Video (Got Taken Down RIP)\n");
 
             Console.WriteLine(" ");
             Console.WriteLine(" ");

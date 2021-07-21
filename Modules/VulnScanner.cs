@@ -74,13 +74,13 @@ namespace Shock.Modules
             if (ScannerRunning == true)
             {
                 Console.Title =
-                    "                                                                                                [>] Shock | Version 1.4 | vx#1234 [<]";
+                    "                                                                                                [>] Shock | Version 1.7 | vx#1234 [<]";
                 Task.Factory.StartNew(delegate { printt(); });
                 return;
             }
             Export.InitializeBlacklist();
             Console.Title =
-                "                                                                                                [>] Shock | Version 1.4 | vx#1234 [<]";
+                "                                                                                                [>] Shock | Version 1.7 | vx#1234 [<]";
             Console.Clear();
             Console.WriteLine();
             Program.Ascii();
